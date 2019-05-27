@@ -1,0 +1,39 @@
+[user]
+  name = "Alexis Córdova"
+  email = "acordova@mac.com"
+
+[color]
+  # color opts: normal, black, red, green, yellow, blue, magenta, cyan, or white
+  ui = auto
+  interactive = auto
+
+[credential]
+  helper = osxkeychain
+
+[diff]
+  tool = Kaleidoscope
+
+[difftool]
+  prompt = false
+
+[pretty]
+  # tut: http://gitimmersion.com/lab_10.html
+  # ref: http://linux.die.net/man/1/git-log
+  # Result: <short-sha> <commit-message> (<pointer-names>) -- <commit-author-name>; <relative-time>
+  nice = "%C(yellow)%h%C(reset) %C(white)%s%C(cyan)%d%C(reset) -- %an; %ar"
+
+[difftool "Kaleidoscope"]
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+
+[mergetool "Kaleidoscope"]
+  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+  trustExitCode = true
+
+[mergetool]
+  prompt = false
+
+[merge]
+  tool = Kaleidoscope
+
+[push]
+  default = current
