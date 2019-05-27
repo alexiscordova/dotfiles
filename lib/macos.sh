@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # ~/.macos — https://mths.be/macos
 
@@ -13,6 +13,7 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Install Mac App Store Apps
+echo '📦 Installing Mac App Store apps'
 mas '1333542190' # 1Password
 mas '1091189122' # Bear
 mas '993487541' # CARROT Weather
@@ -38,11 +39,14 @@ mas '1384080005' # Tweetbot
 mas '497799835' # Xcode
 
 # Install Command Line Tools
+echo '📦 Installing Command Line Tools'
 xcode-select --install
 
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
+
+echo '📦 Setting macOS Defaults'
 
 # Set computer name (as done via System Preferences → Sharing)
 scutil --set ComputerName "Thunderdome"
@@ -174,28 +178,28 @@ defaults write com.apple.dock wvous-bl-modifier -int 0
 ###############################################################################
 # Terminal                                                                    #
 ###############################################################################
+
 # Only use UTF-8 in Terminal.app
 defaults write com.apple.terminal StringEncodings -array 4
 
 # Install Panic Palette
-#open "${HOME}/init/panic-palette.terminal"
+open "${HOME}/dotfiles/src/Panic Palette.terminal"
 
 # Set Panic Palette theme as default
 defaults write com.apple.terminal "Default Window Settings" -string "Panic Palette"
 
 ###############################################################################
-# Kill affected applications                                                  #
+# Restart affected applications                                               #
 ###############################################################################
 
 for app in "Dock" \
-	"Finder" \
-	"Google Chrome" \
-	"Mail" \
-	"Messages" \
-	"SystemUIServer" \
-	"Terminal" \
-	"TextEdit" \
-	"Tweetbot" do
-	killall "${app}" &> /dev/null
+  "Finder" \
+  "Google Chrome" \
+  "Mail" \
+  "Messages" \
+  "SystemUIServer" \
+  "Terminal" \
+  "TextEdit" \
+  "Tweetbot" do
+  killall "${app}" &> /dev/null
 done
-echo "Done. Note that some of these changes require a logout/restart to take effect."
