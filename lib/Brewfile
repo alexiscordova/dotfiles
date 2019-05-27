@@ -2,6 +2,7 @@
 tap 'caskroom/cask'
 
 # CLI Utilities
+echo '📦 Installing CLI Tools'
 brew 'git'
 brew 'libdvdcss'
 brew 'trash'
@@ -13,6 +14,7 @@ cask 'qlmarkdown'
 cask 'quicklook-json'
 
 # Apps
+echo '📦 Installing applications'
 cask 'adobe-creative-cloud'
 cask 'appcleaner'
 cask 'backblaze'
@@ -41,6 +43,7 @@ cask 'virtualbox'
 cask 'visual-studio-code'
 
 # Screen Saver
+echo '📦 Installing screen savers'
 cask 'aerial'
 
 # Remove outdated versions from the cellar.
