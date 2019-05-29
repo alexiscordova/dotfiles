@@ -15,6 +15,11 @@ cask 'qlstephen'
 cask 'qlmarkdown'
 cask 'quicklook-json'
 
+# Fonts
+echo '📦 Installing Cask Fonts'
+cask 'font-fira-code'
+cask 'font-fira-mono'
+
 # Apps
 echo '📦 Installing applications'
 cask 'adobe-creative-cloud'
