@@ -1,5 +1,6 @@
 # Sources
 tap 'caskroom/cask'
+tap 'homebrew/cask-fonts'
 
 # CLI Utilities
 echo '📦 Installing CLI Tools'
