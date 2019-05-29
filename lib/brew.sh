@@ -2,8 +2,8 @@
 
 # Install Homebrew
 if ! which brew > /dev/null; then
-	echo '📦 Installing Homebrew'
-	/usr/bin/ruby -e "$(curl -fsSL
+  echo '📦 Installing Homebrew'
+  /usr/bin/ruby -e "$(curl -fsSL
 https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi;
 
