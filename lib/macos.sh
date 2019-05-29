@@ -68,6 +68,12 @@ sudo systemsetup -setrestartfreeze on -setrestartpowerfailure on
 # Automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
+# Ensure menu bar clock is a digital clock
+defaults write com.apple.menuextra.clock IsAnalog -bool false
+
+# Set menu bar clock format (Day Hour:Minutes:Seconds AM/PM)
+defaults write com.apple.menuextra.clock DateFormat -string "EEE h:mm:ss a"
+
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
@@ -193,6 +199,7 @@ defaults write com.apple.terminal "Default Window Settings" -string "Panic Palet
 ###############################################################################
 
 for app in "Dock" \
+  "SystemUIServer" \
   "Finder" \
   "Google Chrome" \
   "Mail" \
