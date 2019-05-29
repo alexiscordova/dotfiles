@@ -36,7 +36,6 @@ mas '803453959' # Slack
 mas '425424353' # The Unarchiver
 mas '904280696' # Things
 mas '1384080005' # Tweetbot
-mas '497799835' # Xcode
 
 # Install Command Line Tools
 echo '📦 Installing Command Line Tools'
