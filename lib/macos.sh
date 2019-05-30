@@ -112,11 +112,17 @@ defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" -string "@\\
 # Dock                                                                        #
 ###############################################################################
 
+# Enable highlight hover effect for the grid view of a stack (Dock)
+defaults write com.apple.dock mouse-over-hilite-stack -bool true
+
 # Wipe all default apps from the Dock
 defaults write com.apple.dock persistent-apps -array
 
 # Resize Dock
-defaults write com.apple.dock tilesize -int 57
+defaults write com.apple.dock tilesize -int 80
+
+# Don’t animate opening applications from the Dock
+defaults write com.apple.dock launchanim -bool false
 
 # Remove icon bounce
 defaults write com.apple.dock no-bouncing -bool false
