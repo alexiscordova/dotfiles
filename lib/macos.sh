@@ -41,7 +41,7 @@ mas install 1384080005 # Tweetbot
 # General UI/UX                                                               #
 ###############################################################################
 
-echo '📦 Setting macOS Defaults'
+echo '📦 Setting macOS Defaults…'
 
 # Set computer name (as done via System Preferences → Sharing)
 scutil --set ComputerName "Thunderdome"
