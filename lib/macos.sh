@@ -236,20 +236,3 @@ open "${PWD}/src/Panic Palette.terminal"
 
 # Set Panic Palette theme as default
 defaults write com.apple.terminal "Default Window Settings" -string "Panic Palette"
-
-###############################################################################
-# Restart affected applications                                               #
-###############################################################################
-
-for app in "Dock" \
-  "SystemUIServer" \
-  "Finder" \
-  "Google Chrome" \
-  "Mail" \
-  "Messages" \
-  "SystemUIServer" \
-  "Terminal" \
-  "TextEdit" \
-  "Tweetbot"; do
-  killall "${app}" &> /dev/null
-done
