@@ -155,9 +155,6 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 # Show Network Volumes
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
 
-# Unhide User Library Folder
-chflags nohidden ~/Library
-
 # Show Status Bar
 defaults write com.apple.finder ShowStatusBar -bool true
 
