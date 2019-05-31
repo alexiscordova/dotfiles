@@ -234,7 +234,7 @@ Privileges -bool true
 defaults write com.apple.terminal StringEncodings -array 4
 
 # Install Panic Palette
-open "${HOME}/dotfiles/src/Panic Palette.terminal"
+open "${PWD}/src/Panic Palette.terminal"
 
 # Set Panic Palette theme as default
 defaults write com.apple.terminal "Default Window Settings" -string "Panic Palette"
