@@ -1,7 +1,5 @@
 #!/bin/bash
 
-cd $HOME
-
 function runDotFiles() {
   cd bin &&
     rsync --exclude ".git/" \
@@ -11,23 +9,23 @@ function runDotFiles() {
 }
 
 function runHomebrew() {
-  source ./lib/brew.sh;
+  source ${PWD}/lib/brew.sh;
 }
 
 function runMacOS() {
-  source ./lib/macOS.sh;
+  source ${PWD}/lib/macOS.sh;
 }
 
 function runNano() {
-  source ./lib/nano.sh;
+  source ${PWD}/lib/nano.sh;
 }
 
 function runNodeJS() {
-  source ./lib/nodejs.sh;
+  source ${PWD}/lib/nodejs.sh;
 }
 
 function runOhMyZSH() {
-  source ./lib/oh-my-zsh.sh;
+  source ${PWD}/lib/oh-my-zsh.sh;
 }
 
 function runAll() {
