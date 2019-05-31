@@ -1,11 +1,8 @@
 #!/bin/bash
 
 function runDotFiles() {
-  cd bin &&
-    rsync --exclude ".git/" \
-          --exclude ".DS_Store" \
-          --avh --no-perms . ~;
-    source ~/.bash_profile
+  chmod -R 644 ${PWD}/bin/
+  cp -r ${PWD}/bin/ ~
 }
 
 function runHomebrew() {
