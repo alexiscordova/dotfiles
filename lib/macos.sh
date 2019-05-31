@@ -68,6 +68,10 @@ defaults write com.apple.menuextra.clock IsAnalog -bool false
 # Set menu bar clock format (Day Hour:Minutes:Seconds AM/PM)
 defaults write com.apple.menuextra.clock DateFormat -string "EEE h:mm:ss a"
 
+# Show scrollbars automatically
+# Possible values: `WhenScrolling`, `Automatic` and `Always`
+defaults write NSGlobalDomain AppleShowScrollBars -string "Automatic"
+
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
