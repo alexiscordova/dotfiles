@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Aliases
 alias d="~/Desktop"
 alias sites="~/Sites"
