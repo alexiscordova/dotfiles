@@ -35,7 +35,7 @@ function runAll() {
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
   runDotFiles;
 else
-  read -p "What would you like to bootstrap? (dotfiles, homebrew, macOS, nano, nodeJS, ohmyzsh) " TYPE;
+  read -p "What would you like to bootstrap? (all, dotfiles, homebrew, macOS, nano, nodeJS, ohmyzsh) " TYPE;
   echo "";
 
   [[ "$TYPE" == "dotfiles" ]] && runDotFiles;
