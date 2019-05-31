@@ -254,6 +254,6 @@ for app in "Dock" \
   "SystemUIServer" \
   "Terminal" \
   "TextEdit" \
-  "Tweetbot" do
+  "Tweetbot"; do
   killall "${app}" &> /dev/null
 done
