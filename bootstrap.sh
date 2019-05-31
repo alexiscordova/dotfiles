@@ -42,6 +42,7 @@ else
   [[ "$TYPE" == "nodeJS" ]] && runNodeJS;
   [[ "$TYPE" == "ohmyzsh" ]] && runOhMyZSH;
   [[ "$TYPE" == "all" ]] && runAll;
+  [[ "$TYPE" == "kill" ]] && source ${PWD}/lib/killall.sh
 fi;
 
 unset runDotFiles;
