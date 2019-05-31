@@ -34,7 +34,7 @@ function runAll() {
   runHomebrew && runMacOS && runNano && runNodeJS && runOhMyZSH;
 }
 
-if [ "$1" == "--force" -o "$1" == "-f"]; then
+if [ "$1" == "--force" -o "$1" == "-f" ]; then
   runDotFiles;
 else
   read -p "What would you like to bootstrap? (dotfiles, homebrew, macOS, nano, nodeJS, ohmyzsh) " TYPE;
