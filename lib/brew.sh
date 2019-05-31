@@ -19,3 +19,7 @@ brew install mas
 # Install Brewfile
 echo '📦 Install OS X apps from Brewfile'
 brew bundle install
+
+# Run `brew cleanup`
+echo 'Run `brew cleanup…`'
+brew cleanup
