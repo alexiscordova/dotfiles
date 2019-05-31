@@ -47,7 +47,6 @@ echo '📦 Setting macOS Defaults'
 scutil --set ComputerName "Thunderdome"
 scutil --set HostName "Thunderdome"
 scutil --set LocalHostName "Thunderdome"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "Thunderdome"
 
 # Turn on Screen Sharing
 sudo defaults write /var/db/launchd.db/com.apple.launchd/overrides.plist com.apple.screensharing -dict Disabled -bool false
