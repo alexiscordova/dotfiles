@@ -14,32 +14,28 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Install Mac App Store Apps
 echo '📦 Installing Mac App Store apps'
-mas '1333542190' # 1Password
-mas '1091189122' # Bear
-mas '993487541' # CARROT Weather
-mas '924726344' # Deliveries
-mas '975937182' # Fantastical 2
-mas '1081413713' # GIF Brewery 3
-mas '1294126402' # HEIC Converter
-mas '409183694' # Keynote
-mas '430255202' # Mactracker
-mas '441258766' # Magnet
-mas '409203825' # Numbers
-mas '409201541' # Pages
-mas '1303222628' # Paprika Recipe Manager 3
-mas '1179623856' # Pastebot
-mas '429449079' # Patterns
-mas '1289583905' # Pixelmator Pro
-mas '568494494' # Pocket
-mas '1449412482' # Reeder 4
-mas '803453959' # Slack
-mas '425424353' # The Unarchiver
-mas '904280696' # Things
-mas '1384080005' # Tweetbot
-
-# Install Command Line Tools
-echo '📦 Installing Command Line Tools'
-xcode-select --install
+mas '1Password 7', id: 1333542190
+mas 'Bear', id: 1091189122
+mas 'CARROT Weather', id: 993487541
+mas 'Deliveries', id: 924726344
+mas 'Fantastical 2', id: 975937182
+mas 'GIF Brewery 3', id: 1081413713
+mas 'HEIC Converter', id: 1294126402
+mas 'Keynote', id: 409183694
+mas 'Mactracker', id: 430255202
+mas 'Magnet', id: 441258766
+mas 'Numbers', id: 409203825
+mas 'Pages', id: 409201541
+mas 'Paprika Recipe Manager 3', id: 1303222628
+mas 'Pastebot', id: 1179623856
+mas 'Patterns', id: 429449079
+mas 'Pixelmator Pro', id: 1289583905
+mas 'Pocket', id: 568494494
+mas 'Reeder 4', id: 1449412482
+mas 'Slack', id: 803453959
+mas 'The Unarchiver', id: 425424353
+mas 'Things 3', id: 904280696
+mas 'Tweetbot', id: 1384080005
 
 ###############################################################################
 # General UI/UX                                                               #
