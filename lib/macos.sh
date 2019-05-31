@@ -121,6 +121,9 @@ defaults write com.apple.dock persistent-apps -array
 # Resize Dock
 defaults write com.apple.dock tilesize -int 80
 
+# Set Dock Magnification
+default write com.apple.dock largesize -int 73
+
 # Don’t animate opening applications from the Dock
 defaults write com.apple.dock launchanim -bool false
 
