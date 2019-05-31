@@ -37,10 +37,6 @@ mas install 425424353 # The Unarchiver
 mas install 904280696 # Things
 mas install 1384080005 # Tweetbot
 
-# Install Command Line Tools
-echo '📦 Installing Command Line Tools'
-xcode-select --install
-
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
