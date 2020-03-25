@@ -180,9 +180,6 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 # Use icon view in all Finder windows by default
 defaults write com.apple.finder FXPreferredViewStyle -string "icnv"
 
-# Show the /Volumes folder
-sudo chflags nohidden /Volumes
-
 # Disable Dashboard
 defaults write com.apple.dashboard mcx-disabled -bool true
 
