@@ -25,8 +25,12 @@ function runOhMyZSH() {
   source ${PWD}/lib/oh-my-zsh.sh;
 }
 
+function killAll() {
+  source ${PWD}/lib/killall.sh;
+}
+
 function runAll() {
-  runDotFiles && runHomebrew && runMacOS && runBash && runNodeJS && runOhMyZSH;
+   runHomebrew && runMacOS && runBash && runNodeJS && runOhMyZSH && runDotFiles && killAll;
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
@@ -42,7 +46,7 @@ else
   [[ "$TYPE" == "nodeJS" ]] && runNodeJS;
   [[ "$TYPE" == "ohmyzsh" ]] && runOhMyZSH;
   [[ "$TYPE" == "all" ]] && runAll;
-  [[ "$TYPE" == "kill" ]] && source ${PWD}/lib/killall.sh
+  [[ "$TYPE" == "kill" ]] && killAll;
 fi;
 
 unset runDotFiles;
