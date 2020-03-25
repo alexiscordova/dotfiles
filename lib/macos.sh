@@ -14,44 +14,39 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Install Mac App Store Apps
 echo '📦 Installing Mac App Store apps'
-mas '1333542190' # 1Password
-mas '1091189122' # Bear
-mas '993487541' # CARROT Weather
-mas '924726344' # Deliveries
-mas '975937182' # Fantastical 2
-mas '1081413713' # GIF Brewery 3
-mas '1294126402' # HEIC Converter
-mas '409183694' # Keynote
-mas '430255202' # Mactracker
-mas '441258766' # Magnet
-mas '409203825' # Numbers
-mas '409201541' # Pages
-mas '1303222628' # Paprika Recipe Manager 3
-mas '1179623856' # Pastebot
-mas '429449079' # Patterns
-mas '1289583905' # Pixelmator Pro
-mas '568494494' # Pocket
-mas '1449412482' # Reeder 4
-mas '803453959' # Slack
-mas '425424353' # The Unarchiver
-mas '904280696' # Things
-mas '1384080005' # Tweetbot
-
-# Install Command Line Tools
-echo '📦 Installing Command Line Tools'
-xcode-select --install
+mas install 1333542190 # 1Password
+mas install 1091189122 # Bear
+mas install 993487541 # CARROT Weather
+mas install 924726344 # Deliveries
+mas install 975937182 # Fantastical 2
+mas install 1081413713 # GIF Brewery 3
+mas install 1294126402 # HEIC Converter
+mas install 409183694 # Keynote
+mas install 430255202 # Mactracker
+mas install 441258766 # Magnet
+mas install 409203825 # Numbers
+mas install 409201541 # Pages
+mas install 1303222628 # Paprika Recipe Manager 3
+mas install 1179623856 # Pastebot
+mas install 429449079 # Patterns
+mas install 1289583905 # Pixelmator Pro
+mas install 568494494 # Pocket
+mas install 1449412482 # Reeder 4
+mas install 803453959 # Slack
+mas install 425424353 # The Unarchiver
+mas install 904280696 # Things
+mas install 1384080005 # Tweetbot
 
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
 
-echo '📦 Setting macOS Defaults'
+echo '📦 Setting macOS Defaults…'
 
 # Set computer name (as done via System Preferences → Sharing)
 scutil --set ComputerName "Thunderdome"
 scutil --set HostName "Thunderdome"
 scutil --set LocalHostName "Thunderdome"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "Thunderdome"
 
 # Turn on Screen Sharing
 sudo defaults write /var/db/launchd.db/com.apple.launchd/overrides.plist com.apple.screensharing -dict Disabled -bool false
@@ -72,6 +67,10 @@ defaults write com.apple.menuextra.clock IsAnalog -bool false
 
 # Set menu bar clock format (Day Hour:Minutes:Seconds AM/PM)
 defaults write com.apple.menuextra.clock DateFormat -string "EEE h:mm:ss a"
+
+# Show scrollbars automatically
+# Possible values: `WhenScrolling`, `Automatic` and `Always`
+defaults write NSGlobalDomain AppleShowScrollBars -string "Automatic"
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
@@ -121,6 +120,9 @@ defaults write com.apple.dock persistent-apps -array
 # Resize Dock
 defaults write com.apple.dock tilesize -int 80
 
+# Set Dock Magnification
+default write com.apple.dock largesize -int 73
+
 # Don’t animate opening applications from the Dock
 defaults write com.apple.dock launchanim -bool false
 
@@ -155,9 +157,6 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 # Show Network Volumes
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
 
-# Unhide User Library Folder
-chflags nohidden ~/Library
-
 # Show Status Bar
 defaults write com.apple.finder ShowStatusBar -bool true
 
@@ -181,9 +180,6 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 # Use icon view in all Finder windows by default
 defaults write com.apple.finder FXPreferredViewStyle -string "icnv"
 
-# Show the /Volumes folder
-sudo chflags nohidden /Volumes
-
 # Disable Dashboard
 defaults write com.apple.dashboard mcx-disabled -bool true
 
@@ -194,10 +190,6 @@ defaults write com.apple.dock wvous-tl-modifier -int 0
 # Set bottom left hot corner to Start screen saver
 defaults write com.apple.dock wvous-bl-corner -int 5
 defaults write com.apple.dock wvous-bl-modifier -int 0
-
-# Require password immediately after sleep or screen saver begins
-defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 # Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
@@ -237,24 +229,7 @@ Privileges -bool true
 defaults write com.apple.terminal StringEncodings -array 4
 
 # Install Panic Palette
-open "${HOME}/dotfiles/src/Panic Palette.terminal"
+open "${PWD}/src/Panic Palette.terminal"
 
 # Set Panic Palette theme as default
 defaults write com.apple.terminal "Default Window Settings" -string "Panic Palette"
-
-###############################################################################
-# Restart affected applications                                               #
-###############################################################################
-
-for app in "Dock" \
-  "SystemUIServer" \
-  "Finder" \
-  "Google Chrome" \
-  "Mail" \
-  "Messages" \
-  "SystemUIServer" \
-  "Terminal" \
-  "TextEdit" \
-  "Tweetbot" do
-  killall "${app}" &> /dev/null
-done

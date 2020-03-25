@@ -1,5 +1,3 @@
-#! /bin/bash
-
 # Path to your oh-my-zsh installation.
 export ZSH="~/.oh-my-zsh"
 
@@ -35,8 +33,6 @@ fi
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-source $ZSH/oh-my-zsh.sh
 
 autoload -U promptinit; promptinit # prompt support
 autoload -Uz compinit; compinit # suggestion support
