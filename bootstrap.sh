@@ -1,8 +1,12 @@
 #!/bin/bash
 
 function runDotFiles() {
-  chmod -R 644 ${PWD}/bin/
-  cp -r ${PWD}/bin/ ~
+  echo "Copying dotfiles…"
+
+  chmod 644 $(find ${PWD}/bin -type f);
+  rsync -avzh ${PWD}/bin/ ~/;
+
+  source ~/.bash_profile;
 }
 
 function runHomebrew() {
