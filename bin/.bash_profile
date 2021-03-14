@@ -1,7 +1,6 @@
 # Aliases
 alias d="~/Desktop"
 alias sites="~/Sites"
-alias rpi="ssh pi@raspberrypi.local"
 alias trash="trash -F"
 
 # Exports
