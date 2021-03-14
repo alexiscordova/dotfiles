@@ -12,31 +12,6 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-# Install Mac App Store Apps
-echo '📦 Installing Mac App Store apps'
-mas install 1333542190 # 1Password
-mas install 1091189122 # Bear
-mas install 993487541 # CARROT Weather
-mas install 924726344 # Deliveries
-mas install 975937182 # Fantastical 2
-mas install 1081413713 # GIF Brewery 3
-mas install 1294126402 # HEIC Converter
-mas install 409183694 # Keynote
-mas install 430255202 # Mactracker
-mas install 441258766 # Magnet
-mas install 409203825 # Numbers
-mas install 409201541 # Pages
-mas install 1303222628 # Paprika Recipe Manager 3
-mas install 1179623856 # Pastebot
-mas install 429449079 # Patterns
-mas install 1289583905 # Pixelmator Pro
-mas install 568494494 # Pocket
-mas install 1449412482 # Reeder 4
-mas install 803453959 # Slack
-mas install 425424353 # The Unarchiver
-mas install 904280696 # Things
-mas install 1384080005 # Tweetbot
-
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
@@ -61,9 +36,6 @@ sudo systemsetup -setrestartfreeze on -setrestartpowerfailure on
 
 # Automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
-
-# Ensure menu bar clock is a digital clock
-defaults write com.apple.menuextra.clock IsAnalog -bool false
 
 # Set menu bar clock format (Day Hour:Minutes:Seconds AM/PM)
 defaults write com.apple.menuextra.clock DateFormat -string "EEE h:mm:ss a"
@@ -121,7 +93,7 @@ defaults write com.apple.dock persistent-apps -array
 defaults write com.apple.dock tilesize -int 80
 
 # Set Dock Magnification
-default write com.apple.dock largesize -int 73
+defaults write com.apple.dock largesize -int 73
 
 # Don’t animate opening applications from the Dock
 defaults write com.apple.dock launchanim -bool false
@@ -137,9 +109,6 @@ defaults write com.apple.dock showhidden -bool true
 
 # Remove Recent Applications stack
 defaults write com.apple.dock show-recents -bool false
-
-# Don’t show Dashboard as a Space
-defaults write com.apple.dock dashboard-in-overlay -bool true
 
 ###############################################################################
 # Finder                                                                      #

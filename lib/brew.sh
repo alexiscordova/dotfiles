@@ -3,7 +3,7 @@
 # Install Homebrew
 if ! which brew > /dev/null; then
   echo '📦 Installing Homebrew…'
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi;
 
 # Make sure we’re using the latest Homebrew.
@@ -14,9 +14,6 @@ brew update
 echo 'Upgrading Homebrew…'
 brew upgrade
 
-# Install macOS apps
-echo '📦 Installing Mac App Store CLI…'
-brew install mas
 
 # Install Brewfile
 echo '📦 Install macOS apps from Brewfile…'
