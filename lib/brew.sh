@@ -14,6 +14,7 @@ brew update
 echo 'Upgrading Homebrew…'
 brew upgrade
 
+
 # Install Brewfile
 echo '📦 Install macOS apps from Brewfile…'
 brew bundle install
