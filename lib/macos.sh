@@ -37,9 +37,6 @@ sudo systemsetup -setrestartfreeze on -setrestartpowerfailure on
 # Automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
-# Ensure menu bar clock is a digital clock
-defaults write com.apple.menuextra.clock IsAnalog -bool false
-
 # Set menu bar clock format (Day Hour:Minutes:Seconds AM/PM)
 defaults write com.apple.menuextra.clock DateFormat -string "EEE h:mm:ss a"
 
@@ -96,7 +93,7 @@ defaults write com.apple.dock persistent-apps -array
 defaults write com.apple.dock tilesize -int 80
 
 # Set Dock Magnification
-default write com.apple.dock largesize -int 73
+defaults write com.apple.dock largesize -int 73
 
 # Don’t animate opening applications from the Dock
 defaults write com.apple.dock launchanim -bool false
@@ -112,9 +109,6 @@ defaults write com.apple.dock showhidden -bool true
 
 # Remove Recent Applications stack
 defaults write com.apple.dock show-recents -bool false
-
-# Don’t show Dashboard as a Space
-defaults write com.apple.dock dashboard-in-overlay -bool true
 
 ###############################################################################
 # Finder                                                                      #
