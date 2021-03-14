@@ -14,10 +14,6 @@ brew update
 echo 'Upgrading Homebrew…'
 brew upgrade
 
-# Install macOS apps
-echo '📦 Installing Mac App Store CLI…'
-brew install mas
-
 # Install Brewfile
 echo '📦 Install macOS apps from Brewfile…'
 brew bundle install
